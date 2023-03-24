@@ -1,11 +1,7 @@
 package task.techStore.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.http.HeaderUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import task.techStore.exception.BadRequestAlertException;
@@ -18,9 +14,7 @@ import javax.validation.Valid;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
-import static org.hibernate.id.IdentifierGenerator.ENTITY_NAME;
 
 @RestController
 @Slf4j
@@ -82,7 +76,7 @@ public class ItemController {
      */
     @GetMapping
     public List<ItemDto> getAllItems() {
-        log.info("REST request to get a page of Items");
+        log.info("REST request to get all of Items");
         return itemService.findAll();
     }
 

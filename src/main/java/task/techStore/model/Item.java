@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
     private Long id;
 
@@ -40,8 +40,8 @@ public class Item {
     @Column(name = "price", nullable = false)
     private double price;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "shop_order_order_id")
+    @ManyToOne
+    @JoinColumn(name = "order_id")
     private Order order;
 
 }

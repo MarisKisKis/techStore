@@ -15,7 +15,6 @@ public class ItemDto {
     private long id;
     @NotBlank
     private String name;
-    @NotBlank
     private String description;
     private byte[] image;
     private String imageContentType;

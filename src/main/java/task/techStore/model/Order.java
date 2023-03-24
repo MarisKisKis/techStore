@@ -5,8 +5,11 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 
 @Getter
 @Setter
@@ -14,7 +17,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "shop_order")
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -31,4 +34,8 @@ public class Order {
             fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Item> items = new HashSet<>();
+
+    @NotNull
+    @Column(name = "created")
+    private LocalDateTime created;
 }
