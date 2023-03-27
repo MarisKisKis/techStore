@@ -22,8 +22,8 @@ public class OrderController {
     }
 
     @PostMapping("/new")
-    public OrderDto createOrder(@RequestBody OrderDto orderDto) {
+    public void createOrder(@RequestBody OrderDto orderDto) {
         log.info("Creating new order");
-        return orderService.createOrder(orderDto);
+        orderService.createOrder(orderDto);
     }
 }

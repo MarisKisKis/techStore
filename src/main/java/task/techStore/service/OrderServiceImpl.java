@@ -3,6 +3,7 @@ package task.techStore.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import task.techStore.model.Order;
 import task.techStore.model.dto.OrderDto;
 import task.techStore.model.dto.OrderMapper;
 import task.techStore.repository.OrderRepository;
@@ -22,10 +23,8 @@ public class OrderServiceImpl implements OrderService{
     }
 
     @Override
-    public OrderDto createOrder(OrderDto orderDto) {
+    public void createOrder(OrderDto orderDto) {
         orderDto.setCreated(LocalDateTime.now());
         orderRepository.save(OrderMapper.toOrder(orderDto));
-        Optional<>orderRepository.findById()
-        return orderRepository;
     }
 }
