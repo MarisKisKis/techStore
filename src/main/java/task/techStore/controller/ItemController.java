@@ -15,7 +15,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 
-
+@CrossOrigin(origins = { "http://localhost:3000", "http://localhost:4200" })
 @RestController
 @Slf4j
 @RequestMapping("/items")
