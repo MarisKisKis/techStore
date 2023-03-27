@@ -7,7 +7,7 @@ export default function ShopList(props) {
     const [loading, setLoading] = useState(true); // идет загрузка?
 
     useEffect(() => {
-        fetch('/items')
+        fetch('http://localhost:8080/items')
             .then(response => response.json())
             .then(data => {
                 data.items && setItems(data.items.slice(0, 24));

@@ -12,7 +12,7 @@ class ProductList extends Component {
     }
 
     componentDidMount() {
-        fetch('/items')
+        fetch('http://localhost:8080/items')
             .then(response => response.json())
             .then(data => this.setState({item: data}));
     }
